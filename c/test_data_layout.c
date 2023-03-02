@@ -22,6 +22,16 @@ void print_matrix_linear(double* A, int n)
   printf("\n");
 }
 
+void print_matrix_double_pointer(double** A)
+{
+  for (int i = 0; i < N; i++) {
+    for (int j = 0; j < M; j++) {
+      printf(" %02g", A[i][j]);
+    }
+    printf("\n");
+  }
+}
+
 int main(int argc, char** argv)
 {
   double A[N][M];
