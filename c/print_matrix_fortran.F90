@@ -1,0 +1,21 @@
+
+#define N 3
+#define M 4
+
+! ----------------------------------------------------------------------
+subroutine print_matrix_fortran(A) bind(C)
+! ----------------------------------------------------------------------
+  use iso_c_binding
+  implicit none
+
+  real(C_DOUBLE) A(N, M)
+  integer i, j
+
+  do i = 1, N
+     do j = 1, M
+        write(*, ' (F4.0)', advance='no') A(i, j) ! this is Fortran90
+     end do
+     write(*, *)
+  end do
+
+end subroutine print_matrix_fortran
