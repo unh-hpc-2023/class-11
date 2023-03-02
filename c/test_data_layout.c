@@ -5,7 +5,7 @@
 #define M 4
 
 // implemented in Fortran
-void print_matrix_(double* A);
+void print_matrix_fortran(double* A);
 
 void print_matrix(double A[N][M])
 {
@@ -53,7 +53,7 @@ int main(int argc, char** argv)
   printf("\n");
 
   printf("print_matrix (fortran):\n");
-  print_matrix_((double*)A);
+  print_matrix_fortran((double*)A);
   printf("\n");
 
   return 0;

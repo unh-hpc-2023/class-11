@@ -7,6 +7,15 @@ program main
 ! ----------------------------------------------------------------------
   implicit none
 
+  interface
+    subroutine print_matrix_fortran(A) bind(C)
+      use iso_c_binding
+      implicit none
+
+      real(C_DOUBLE) A(N, M)
+    end subroutine print_matrix_fortran
+  end interface
+
   real*8 A(N, M)
   integer i, j
 
@@ -16,7 +25,7 @@ program main
      end do
   end do
 
-  print *, 'print_matrix'
-  call print_matrix(A)
+  print *, 'print_matrix_fortran'
+  call print_matrix_fortran(A)
 
 end program main

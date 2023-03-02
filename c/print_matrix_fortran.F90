@@ -3,11 +3,12 @@
 #define M 4
 
 ! ----------------------------------------------------------------------
-subroutine print_matrix(A)
+subroutine print_matrix_fortran(A) bind(C)
 ! ----------------------------------------------------------------------
+  use iso_c_binding
   implicit none
 
-  real*8 A(N, M)
+  real(C_DOUBLE) A(N, M)
   integer i, j
 
   do i = 1, N
@@ -17,4 +18,4 @@ subroutine print_matrix(A)
      write(*, *)
   end do
 
-end subroutine print_matrix
+end subroutine print_matrix_fortran
