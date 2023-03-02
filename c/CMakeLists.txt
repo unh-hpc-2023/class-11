@@ -14,4 +14,7 @@ add_executable(test_matrix_vector_mul test_matrix_vector_mul.c)
 target_link_libraries(test_matrix_vector_mul PRIVATE linalg)
 add_test(TestMatrixVectorMul test_matrix_vector_mul)
 
+enable_language(Fortran)
+
 add_executable(test_data_layout test_data_layout.c)
+add_executable(test_data_layout_fortran test_data_layout_fortran.F90)
